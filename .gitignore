@@ -102,3 +102,15 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+
+# Editor generated files #
+##########################
+*.code-workspace
+*_settings.json
+
+# Environment #
+###############
+.env
+zappa_settings.json
+json/*
