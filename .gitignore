@@ -114,3 +114,4 @@ venv.bak/
 .env
 zappa_settings.json
 json/*
+.keys
