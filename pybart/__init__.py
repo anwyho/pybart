@@ -7,18 +7,20 @@ import os
 import requests
 from sys import argv
 
-try:
-    PUBL_KEY=os.environ['BART_PUBL']
-    PRIV_KEY=os.environ['BART_PRIV']
-except KeyError as e:
-    raise Exception("ERROR: Missing BART API key.")
+DEFAULT_KEY='MW9S-E7SL-26DU-VV8V'
 
-BART_KEY=PUBL_KEY
+class session:
+    def __init__(self, api_key=DEFAULT_KEY, cache_dir=None):
+        self._key = api_key
+        self._cache_dir = cache_dir
 
+    @property
+    def key(self):
+        return self._key
 
-class Pybart:
-    def __init__(self): 
-        self.key = BART_KEY
+    @key.setter
+    def key(self, new_key):
+        self._key = new_key
 
 
 if __name__ == "__main__":
