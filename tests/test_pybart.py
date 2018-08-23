@@ -1,6 +1,7 @@
 from .context import pybart
 
 import unittest
+import pybart
 
 class TestPybart(unittest.TestCase):
 
