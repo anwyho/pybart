@@ -23,5 +23,11 @@ class session:
         self._key = new_key
 
 
+    # TODO: migrate updateStations to here
+    # TODO: change name of updateStations
+    def updateStations(self):
+        pass
+
+
 if __name__ == "__main__":
     print("Hello, BART!\nStatus: Ready")
