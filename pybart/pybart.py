@@ -18,7 +18,7 @@ BART_KEY=PUBL_KEY
 
 class Pybart:
     def __init__(self): 
-        pass
+        self.key = BART_KEY
 
 
 if __name__ == "__main__":

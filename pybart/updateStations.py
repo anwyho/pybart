@@ -11,17 +11,16 @@ from json import JSONEncoder
 import os
 import requests
 
-import passingStatus
-import apiInfo
+import pybart.passingStatus as passingStatus
 
 # Public API key - this code will not be run very often. 
-KEY = apiInfo.BART_PUBLIC
+KEY = os.environ['BART_PUBL']
 # TODO: Generalize this path to make it easier to find later in project
-TARGET = os.path.join(os.path.dirname(__file__), "..", "resources", "stationAbbrToStationName.json")
+TARGET = os.path.join(os.path.dirname(__file__), "..", "db/json", "stationAbbrToStationName.json")
 
 def updateStations():
   print('Updating stations...')
-  urlEndpoint = apiInfo.BART_API_URL + 'stn.aspx'
+  urlEndpoint = 'http://api.bart.gov/api/stn.aspx'
   payload = {'cmd': 'stns', 'key': KEY, 'json': 'y'}
 
   try:
