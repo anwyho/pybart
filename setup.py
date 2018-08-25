@@ -13,7 +13,7 @@ DESCRIPTION = 'Python interface for the BART API.'
 URL = 'https://github.com/anwyho/pybart'
 EMAIL = 'anwyho@gmail.com'
 AUTHOR = 'Anthony Ho'
-REQUIRES_PYTHON = '>=3.5.0'
+REQUIRES_PYTHON = '>=3.6.0'
 VERSION = None
 REQUIRED = [
     'requests',
