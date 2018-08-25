@@ -2,7 +2,7 @@
 
 __author__="Anthony W. Ho"
 
-from . import refreshCache
+from . import cacheOps
 
 import json
 import os
@@ -46,7 +46,7 @@ class session:
 
     # TODO: migrate updateStations to here
     def refresh_stations(self, forceRefresh=False, useLocalCache=False, cacheDir=None):
-        refresh_stations
+        json = cacheOps.retrieve_json()
         if self._cacheDir:
             try:
                 stnsFilename = self._cacheDir + 'stns.json'
@@ -54,7 +54,9 @@ class session:
 
                 with open(self._cacheDir + 'stns.json' "rb") as stns:
                     stations = json.load(stns)
-            except:
+            except json.decoder.JSONDecodeError as j:
+                print(j)
+            except Exception as _:
                 print("Couldn't write to given cache directory {}."
                     .format(self._cacheDir),file=sys.stderr)
             
