@@ -11,12 +11,14 @@ from json import JSONEncoder
 import os
 import requests
 
-import pybart.passingStatus as passingStatus
+import passingStatus
+
 
 # Public API key - this code will not be run very often. 
 KEY = os.environ['BART_PUBL']
 # TODO: Generalize this path to make it easier to find later in project
 TARGET = os.path.join(os.path.dirname(__file__), "..", "db/json", "stationAbbrToStationName.json")
+
 
 def updateStations():
   print('Updating stations...')
