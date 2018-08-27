@@ -4,7 +4,7 @@ import time
 import sys
 
 # class for accessing local cache or aws s3 bucket
-class Cache():
+class Cache:
     def __init__(self):
         pass
 
