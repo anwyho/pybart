@@ -26,4 +26,10 @@ class Cache:
 
                 # retry calling api if load failed
         
-    
+class LocalCache(Cache):
+    def __init__(self):
+        pass
+
+class S3Cache(Cache):
+    def __init__(self):
+        pass

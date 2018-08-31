@@ -17,9 +17,11 @@ class PybartSession:
     def __init__(self, 
             api_key=None):
         self._key = api_key
+        self._cache = None
         self._cacheDir = None
         self._awsBucket = None
         self._awsDir = None
+        self.userId = None
 
     @property
     def cacheDir(self):
@@ -49,7 +51,10 @@ class PybartSession:
 
 
     # TODO: migrate updateStations to here
-    def refresh_stations(self, forceRefresh=False, useLocalCache=False, cacheDir=None):
+    def refresh_stations(self, 
+            forceRefresh=False, 
+            useLocalCache=False, 
+            cacheDir=None):
         # json = cacheOps.retrieve_json()
         if self._cacheDir:
             try:
